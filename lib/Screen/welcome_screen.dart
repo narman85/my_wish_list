@@ -31,8 +31,12 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FadeInLeft(
+                        BounceInLeft(
+                          duration: kAnimationDuration,
                           child: SmallButton(
+                            onTap: () {
+                              print("Sign UP");
+                            },
                             color: kWhiteColor,
                             text: "SIGN UP",
                           ),
@@ -40,8 +44,12 @@ class WelcomeScreen extends StatelessWidget {
                         SizedBox(
                           width: 20,
                         ),
-                        FadeInDown(
+                        BounceInDown(
+                          duration: kAnimationDuration,
                           child: SmallButton(
+                            onTap: () {
+                              print("Sign IN");
+                            },
                             color: kGreyColor,
                             text: "SIGN IN",
                             kolor: kWhiteColor,
@@ -55,8 +63,12 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FadeInUp(
+                        BounceInUp(
+                          duration: kAnimationDuration,
                           child: SmallIconButton(
+                            onTap: () {
+                              print("Facebook");
+                            },
                             icon: FontAwesomeIcons.facebookF,
                             color: kWhiteColor,
                           ),
@@ -64,8 +76,12 @@ class WelcomeScreen extends StatelessWidget {
                         SizedBox(
                           width: 20,
                         ),
-                        FadeInRight(
+                        BounceInRight(
+                          duration: kAnimationDuration,
                           child: SmallIconButton(
+                            onTap: () {
+                              print("Google");
+                            },
                             icon: FontAwesomeIcons.google,
                             color: kGreyColor,
                             kolor: kWhiteColor,
