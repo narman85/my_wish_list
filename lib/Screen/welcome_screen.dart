@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widget/widgets.dart';
 import 'package:flutter_application_1/constants.dart';
@@ -30,17 +31,21 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SmallButton(
-                          color: kWhiteColor,
-                          text: "SIGN UP",
+                        FadeInLeft(
+                          child: SmallButton(
+                            color: kWhiteColor,
+                            text: "SIGN UP",
+                          ),
                         ),
                         SizedBox(
                           width: 20,
                         ),
-                        SmallButton(
-                          color: kGreyColor,
-                          text: "SIGN IN",
-                          kolor: kWhiteColor,
+                        FadeInDown(
+                          child: SmallButton(
+                            color: kGreyColor,
+                            text: "SIGN IN",
+                            kolor: kWhiteColor,
+                          ),
                         ),
                       ],
                     ),
@@ -50,17 +55,21 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SmallIconButton(
-                          icon: FontAwesomeIcons.facebookF,
-                          color: kWhiteColor,
+                        FadeInUp(
+                          child: SmallIconButton(
+                            icon: FontAwesomeIcons.facebookF,
+                            color: kWhiteColor,
+                          ),
                         ),
                         SizedBox(
                           width: 20,
                         ),
-                        SmallIconButton(
-                          icon: FontAwesomeIcons.google,
-                          color: kGreyColor,
-                          kolor: kWhiteColor,
+                        FadeInRight(
+                          child: SmallIconButton(
+                            icon: FontAwesomeIcons.google,
+                            color: kGreyColor,
+                            kolor: kWhiteColor,
+                          ),
                         ),
                       ],
                     ),
