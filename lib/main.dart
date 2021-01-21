@@ -2,8 +2,8 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'routes.dart';
-import 'theme.dart';
+import 'Util/routes.dart';
+import 'Util/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,11 @@ class MyApp extends StatelessWidget {
           minWidth: 450,
           defaultScale: true,
           breakpoints: [
-            ResponsiveBreakpoint.resize(450, name: MOBILE),
+            ResponsiveBreakpoint.resize(
+              450,
+              name: MOBILE,
+              scaleFactor: 1.5,
+            ),
             ResponsiveBreakpoint.autoScale(
               800,
               name: TABLET,

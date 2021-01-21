@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
-import 'Screen/add_wish_screen.dart';
-import 'Screen/forgot_screen.dart';
-import 'Screen/home_screen.dart';
-import 'Screen/profile_screen.dart';
-import 'Screen/settings_screen.dart';
-import 'Screen/sign_in_screen.dart';
-import 'Screen/sign_up_screen.dart';
-import 'Screen/splash_screen.dart';
-import 'Screen/welcome_screen.dart';
+import '../Screen/add_wish_screen.dart';
+import '../Screen/forgot_screen.dart';
+import '../Screen/home_screen.dart';
+import '../Screen/profile_screen.dart';
+import '../Screen/settings_screen.dart';
+import '../Screen/sign_in_screen.dart';
+import '../Screen/sign_up_screen.dart';
+import '../Screen/splash_screen.dart';
+import '../Screen/welcome_screen.dart';
 
 class AppRoutes {
   static final routes = [

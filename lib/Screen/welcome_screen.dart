@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_wish_list/Widget/widgets.dart';
 
-import '../constants.dart';
+import '../Util/constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
