@@ -6,17 +6,12 @@ import '../Screen/profile_screen.dart';
 import '../Screen/settings_screen.dart';
 import '../Screen/sign_in_screen.dart';
 import '../Screen/sign_up_screen.dart';
-import '../Screen/splash_screen.dart';
 import '../Screen/welcome_screen.dart';
 
 class AppRoutes {
   static final routes = [
     GetPage(
       name: '/',
-      page: () => SplashScreen(),
-    ),
-    GetPage(
-      name: '/welcomescreen',
       page: () =>
           WelcomeScreen(), //(uncomment here to swith to todo app)TodoList(),
     ),

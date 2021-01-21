@@ -7,15 +7,45 @@ ThemeData theme() {
     scaffoldBackgroundColor: kBlackColor,
     textTheme: GoogleFonts.montserratTextTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    appBarTheme: appBarTheme(),
+    inputDecorationTheme: inputDecorationTheme(),
   );
 }
 
+TextTheme textTheme() {
+  return TextTheme(
+    bodyText1: TextStyle(color: kWhiteColor),
+    bodyText2: TextStyle(color: kWhiteColor),
+  );
+}
 
+InputDecorationTheme inputDecorationTheme() {
+  OutlineInputBorder outlineInputBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(5),
+    borderSide: BorderSide(color: kGreyColor),
+    gapPadding: 10,
+  );
+  return InputDecorationTheme(
+    
+    hintStyle: TextStyle(color: kGreyColor),
+    labelStyle: TextStyle(color: kWhiteColor),
+    floatingLabelBehavior: FloatingLabelBehavior.always,
+    contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+    enabledBorder: outlineInputBorder,
+    focusedBorder: outlineInputBorder,
+    border: outlineInputBorder,
+  );
+}
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    color: kWhiteColor,
+    color: Colors.transparent,
     elevation: 0,
-    iconTheme: IconThemeData(color: kWhiteColor),
+    iconTheme: IconThemeData(
+      color: kWhiteColor,
+    ),
+    textTheme: TextTheme(
+      headline6: TextStyle(color: Color(0XFF8B8B8B), fontSize: 18),
+    ),
   );
 }

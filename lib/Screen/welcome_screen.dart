@@ -1,9 +1,10 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_wish_list/Util/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_wish_list/Widget/widgets.dart';
-
 import '../Util/constants.dart';
+import 'package:get/get.dart';
+
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -36,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                           duration: kAnimationDuration,
                           child: SmallButton(
                             onTap: () {
-                              print("Sign UP");
+                              Get.toNamed("/signupscreen");
                             },
                             color: kWhiteColor,
                             text: "SIGN UP",
@@ -49,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
                           duration: kAnimationDuration,
                           child: SmallButton(
                             onTap: () {
-                              print("Sign IN");
+                              Get.toNamed("/signinscreen");
                             },
                             color: kGreyColor,
                             text: "SIGN IN",
