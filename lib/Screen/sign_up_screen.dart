@@ -6,7 +6,6 @@ import 'package:my_wish_list/Util/widgets.dart';
 
 class SignUpScreen extends StatelessWidget {
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
@@ -20,42 +19,68 @@ class SignUpScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SmallButton(
-                      onTap: () {
-                        Get.toNamed("/signupscreen");
-                      },
+                      onTap: () {},
                       color: kWhiteColor,
                       text: "SIGN UP",
                     ),
                     SizedBox(width: 20),
                     SmallButton(
-                      onTap: () {
-                        Get.toNamed("/signinscreen");
-                      },
-                      color: kGreyColor,
-                      text: "SIGN IN",
-                      kolor: kWhiteColor,
-                    ),
+                        onTap: () {
+                          Get.toNamed("/signinscreen");
+                        },
+                        color: kGreyColor,
+                        text: "SIGN IN",
+                        kolor: kWhiteColor),
                   ],
                 ),
                 SizedBox(height: 100),
                 MyTextField(
-                  prefiks: Icons.mail,
-                  keyboard: TextInputType.emailAddress,
-                  label: 'Email',
-                  hint: 'name@mail.com',
-                ),
+                    prefiks: Icons.mail,
+                    keyboard: TextInputType.emailAddress,
+                    label: 'EMAIL',
+                    hint: 'email@mail.com'),
                 SizedBox(height: 50),
                 MyTextField(
-                  prefiks: FontAwesomeIcons.idCardAlt,
-                  label: 'Name',
-                  hint: 'Aladdin',
-                ),
+                    prefiks: FontAwesomeIcons.idCardAlt,
+                    label: 'NAME',
+                    hint: 'aladdin'),
                 SizedBox(height: 50),
                 MyTextField(
-                  prefiks: FontAwesomeIcons.key,
-                  label: 'Password',
-                  hint: 'secret',
-                  secret: true,
+                    prefiks: FontAwesomeIcons.key,
+                    label: 'PASSWORD',
+                    hint: 'secret',
+                    secret: true),
+                SizedBox(
+                  height: 50,
+                ),
+                BigButton(
+                  onTap: () {},
+                  text: 'SIGN UP',
+                  color: kWhiteColor,
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SmallIconButton(
+                      onTap: () {
+                        print("Facebook");
+                      },
+                      icon: FontAwesomeIcons.facebookF,
+                      color: kWhiteColor,
+                    ),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    SmallIconButton(
+                      onTap: () {
+                        print("Google");
+                      },
+                      icon: FontAwesomeIcons.google,
+                      color: kGreyColor,
+                      kolor: kWhiteColor,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -65,3 +90,4 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+//!animasiya cox olsa ne olar

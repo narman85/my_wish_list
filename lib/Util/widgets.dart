@@ -83,9 +83,9 @@ class MyTextField extends StatelessWidget {
     this.keyboard,
     this.label,
     this.hint,
-    this.secret=false,
+    this.secret = false,
   });
-  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -94,6 +94,7 @@ class MyTextField extends StatelessWidget {
         left: 50,
       ),
       child: TextField(
+        
         obscureText: secret,
         enableInteractiveSelection: false,
         cursorColor: kWhiteColor,
@@ -104,6 +105,7 @@ class MyTextField extends StatelessWidget {
         autocorrect: false,
         textCapitalization: TextCapitalization.none,
         decoration: InputDecoration(
+          floatingLabelBehavior: FloatingLabelBehavior.always,
           labelText: label,
           hintText: hint,
           prefixIcon: Icon(
@@ -111,6 +113,43 @@ class MyTextField extends StatelessWidget {
             color: kWhiteColor,
           ),
         ),
+      ),
+    );
+  }
+}
+
+//! Big Button Widget
+class BigButton extends StatelessWidget {
+  final Color color;
+  final String text;
+  final Color kolor;
+  final VoidCallback onTap;
+
+  const BigButton({
+    this.color,
+    this.text,
+    this.kolor,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ButtonTheme(
+      minWidth: 290,
+      height: 60,
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
+        onPressed: onTap,
+        child: Text(
+          text,
+          style: TextStyle(
+            letterSpacing: 2,
+            color: kolor,
+          ),
+        ),
+        color: color,
       ),
     );
   }

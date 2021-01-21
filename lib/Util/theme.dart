@@ -12,13 +12,6 @@ ThemeData theme() {
   );
 }
 
-TextTheme textTheme() {
-  return TextTheme(
-    bodyText1: TextStyle(color: kWhiteColor),
-    bodyText2: TextStyle(color: kWhiteColor),
-  );
-}
-
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(5),
@@ -26,7 +19,6 @@ InputDecorationTheme inputDecorationTheme() {
     gapPadding: 10,
   );
   return InputDecorationTheme(
-    
     hintStyle: TextStyle(color: kGreyColor),
     labelStyle: TextStyle(color: kWhiteColor),
     floatingLabelBehavior: FloatingLabelBehavior.always,
