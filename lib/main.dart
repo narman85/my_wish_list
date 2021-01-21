@@ -1,16 +1,9 @@
-import 'package:flutter_application_1/theme.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'Screen/add_wish_screen.dart';
-import 'Screen/forgot_screen.dart';
-import 'Screen/home_screen.dart';
-import 'Screen/profile_screen.dart';
-import 'Screen/settings_screen.dart';
-import 'Screen/sign_in_screen.dart';
-import 'Screen/sign_up_screen.dart';
-import 'Screen/welcome_screen.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'routes.dart';
+import 'theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,16 +50,8 @@ class MyApp extends StatelessWidget {
               scaleFactor: 1.5,
             ),
           ]),
-      home: WelcomeScreen(),
-      routes: {
-        '/home': (context) => HomeScreen(),
-        '/signIn': (context) => SignInScreen(),
-        '/signUp': (context) => SignUpScreen(),
-        '/forgot': (context) => ForgotScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/settings': (context) => SettingsScreen(),
-        '/addWish': (context) => AddWishScreen(),
-      },
+      initialRoute: '/welcomescreen',
+      getPages: AppRoutes.routes,
     );
   }
 }

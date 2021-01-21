@@ -1,8 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widget/widgets.dart';
-import 'package:flutter_application_1/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_wish_list/Widget/widgets.dart';
+
+import '../constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
