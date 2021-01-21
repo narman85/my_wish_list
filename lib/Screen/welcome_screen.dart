@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../Util/constants.dart';
 import 'package:get/get.dart';
 
-
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,10 +18,13 @@ class WelcomeScreen extends StatelessWidget {
                     height: 400,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 100),
-                      child: FaIcon(
-                        FontAwesomeIcons.gift,
-                        size: 150,
-                        color: kWhiteColor,
+                      child: Pulse(
+                        duration: kAnimationDuration,
+                        child: FaIcon(
+                          FontAwesomeIcons.gift,
+                          size: 150,
+                          color: kWhiteColor,
+                        ),
                       ),
                     )),
                 SizedBox(

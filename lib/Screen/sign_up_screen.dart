@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -18,67 +19,91 @@ class SignUpScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SmallButton(
-                      onTap: () {},
-                      color: kWhiteColor,
-                      text: "SIGN UP",
+                    BounceInLeft(
+                      duration: kAnimationDuration,
+                      child: SmallButton(
+                        onTap: () {},
+                        color: kWhiteColor,
+                        text: "SIGN UP",
+                      ),
                     ),
                     SizedBox(width: 20),
-                    SmallButton(
-                        onTap: () {
-                          Get.toNamed("/signinscreen");
-                        },
-                        color: kGreyColor,
-                        text: "SIGN IN",
-                        kolor: kWhiteColor),
+                    BounceInRight(
+                      duration: kAnimationDuration,
+                      child: SmallButton(
+                          onTap: () {
+                            Get.toNamed("/signinscreen");
+                          },
+                          color: kGreyColor,
+                          text: "SIGN IN",
+                          kolor: kWhiteColor),
+                    ),
                   ],
                 ),
                 SizedBox(height: 100),
-                MyTextField(
-                    prefiks: Icons.mail,
-                    keyboard: TextInputType.emailAddress,
-                    label: 'EMAIL',
-                    hint: 'email@mail.com'),
+                BounceInLeft(
+                  duration: kAnimationDuration,
+                  child: MyTextField(
+                      prefiks: Icons.mail,
+                      keyboard: TextInputType.emailAddress,
+                      label: 'EMAIL',
+                      hint: 'email@mail.com'),
+                ),
                 SizedBox(height: 50),
-                MyTextField(
-                    prefiks: FontAwesomeIcons.idCardAlt,
-                    label: 'NAME',
-                    hint: 'aladdin'),
+                BounceInRight(
+                  duration: kAnimationDuration,
+                  child: MyTextField(
+                      prefiks: FontAwesomeIcons.idCardAlt,
+                      label: 'NAME',
+                      hint: 'aladdin'),
+                ),
                 SizedBox(height: 50),
-                MyTextField(
-                    prefiks: FontAwesomeIcons.key,
-                    label: 'PASSWORD',
-                    hint: 'secret',
-                    secret: true),
+                BounceInLeft(
+                  duration: kAnimationDuration,
+                  child: MyTextField(
+                      prefiks: FontAwesomeIcons.key,
+                      label: 'PASSWORD',
+                      hint: 'secret',
+                      secret: true),
+                ),
                 SizedBox(
                   height: 50,
                 ),
-                BigButton(
-                  onTap: () {},
-                  text: 'SIGN UP',
-                  color: kWhiteColor,
+                BounceInDown(
+                  duration: kAnimationDuration,
+                  child: BigButton(
+                    onTap: () {},
+                    text: 'SIGN UP',
+                    color: kWhiteColor,
+                  ),
                 ),
                 SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SmallIconButton(
-                      onTap: () {
-                        print("Facebook");
-                      },
-                      icon: FontAwesomeIcons.facebookF,
-                      color: kWhiteColor,
+                    BounceInLeft(
+                      duration: kAnimationDuration,
+                      child: SmallIconButton(
+                        onTap: () {
+                          print("Facebook");
+                        },
+                        icon: FontAwesomeIcons.facebookF,
+                        color: kWhiteColor,
+                      ),
                     ),
                     SizedBox(
                       width: 50,
                     ),
-                    SmallIconButton(
-                      onTap: () {
-                        print("Google");
-                      },
-                      icon: FontAwesomeIcons.google,
-                      color: kGreyColor,
-                      kolor: kWhiteColor,
+                    BounceInRight(
+                      duration: kAnimationDuration,
+                      child: SmallIconButton(
+                        onTap: () {
+                          print("Google");
+                        },
+                        icon: FontAwesomeIcons.google,
+                        color: kGreyColor,
+                        kolor: kWhiteColor,
+                      ),
                     ),
                   ],
                 ),
@@ -90,4 +115,4 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
-//!animasiya cox olsa ne olar
+
