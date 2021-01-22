@@ -117,6 +117,42 @@ class MyTextField extends StatelessWidget {
   }
 }
 
+//! Second Textfield Widget
+// ignore: must_be_immutable
+class MyTextField2 extends StatelessWidget {
+  final TextInputType keyboard;
+  final String label;
+  final String hint;
+  bool secret;
+  @override
+  MyTextField2({
+    this.keyboard,
+    this.label,
+    this.hint,
+    this.secret = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      obscureText: secret,
+      enableInteractiveSelection: false,
+      cursorColor: kWhiteColor,
+      keyboardType: keyboard,
+      style: TextStyle(
+        color: kWhiteColor,
+      ),
+      autocorrect: false,
+      textCapitalization: TextCapitalization.none,
+      decoration: InputDecoration(
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        labelText: label,
+        hintText: hint,
+      ),
+    );
+  }
+}
+
 //! Big Button Widget
 class BigButton extends StatelessWidget {
   final Color color;

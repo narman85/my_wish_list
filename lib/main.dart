@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             ResponsiveBreakpoint.resize(
               450,
               name: MOBILE,
-              scaleFactor: 1.5,
+              scaleFactor: 1.3,
             ),
             ResponsiveBreakpoint.autoScale(
               800,
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
               scaleFactor: 1.5,
             ),
           ]),
-      initialRoute: '/',
+      initialRoute: '/homescreen',
       getPages: AppRoutes.routes,
     );
   }
