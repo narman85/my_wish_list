@@ -83,9 +83,7 @@ class WelcomeScreen extends StatelessWidget {
                         BounceInRight(
                           duration: kAnimationDuration,
                           child: SmallIconButton(
-                            onTap: () {
-                              print("Google");
-                            },
+                            onTap: () {},
                             icon: FontAwesomeIcons.google,
                             color: kGreyColor,
                             kolor: kWhiteColor,

@@ -189,3 +189,36 @@ class BigButton extends StatelessWidget {
     );
   }
 }
+
+
+//! Underline Button
+class UnderlineButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onTap;
+  const UnderlineButton({this.text, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      onPressed: onTap,
+      child: Container(
+        padding: EdgeInsets.only(
+          bottom: 1, // space between underline and text
+        ),
+        decoration: BoxDecoration(
+            border: Border(
+                bottom: BorderSide(
+          color: Colors.white, // Text colour here
+          width: 1, // Underline width
+        ))),
+        child: Text(
+          text,
+          style: TextStyle(
+            letterSpacing: 2,
+            color: kWhiteColor,
+          ),
+        ),
+      ),
+    );
+  }
+}

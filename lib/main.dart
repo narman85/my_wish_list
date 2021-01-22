@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
               scaleFactor: 1.5,
             ),
           ]),
-      initialRoute: '/homescreen',
+      initialRoute: '/',
       getPages: AppRoutes.routes,
     );
   }

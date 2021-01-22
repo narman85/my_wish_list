@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:my_wish_list/Screen/add_wish_screen.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
@@ -30,7 +31,12 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(width: 10),
                   Padding(
                     padding: const EdgeInsets.only(right: 12),
-                    child: CircleAvatar(maxRadius: 50),
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed('profilescreen');
+                      },
+                      child: CircleAvatar(maxRadius: 50),
+                    ),
                   ),
                 ],
               ),
@@ -75,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(10),
                           child: FaIcon(
-                            FontAwesomeIcons.mapMarker,
+                            FontAwesomeIcons.mapMarkerAlt,
                             color: kWhiteColor,
                           ),
                         ),
@@ -120,29 +126,8 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FloatingActionButton(
-          backgroundColor: kWhiteColor,
-          child: FaIcon(
-            FontAwesomeIcons.plus,
-            color: Colors.black54,
-          ),
-          onPressed: () {
-            Get.bottomSheet(
-              Container(
-                height: 1000,
-                color: kWhiteColor,
-                child: Column(
-                  children: [
-                    Text('s'),
-                    Text('s'),
-                    Text('s'),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
+        padding: const EdgeInsets.all(10),
+        child: AddWishScreen(),
       ),
     );
   }

@@ -89,7 +89,7 @@ class SignInScreen extends StatelessWidget {
                       duration: kAnimationDuration,
                       child: SmallIconButton(
                         onTap: () {
-                          print("Google");
+                          Get.offNamed('homescreen');
                         },
                         icon: FontAwesomeIcons.google,
                         color: kGreyColor,
@@ -101,28 +101,11 @@ class SignInScreen extends StatelessWidget {
                 SizedBox(
                   height: 75,
                 ),
-                FlatButton(
-                  onPressed: () {
-                    Get.toNamed("/forgotscreen");
+                UnderlineButton(
+                  onTap: () {
+                    Get.toNamed('forgotscreen');
                   },
-                  child: Container(
-                    padding: EdgeInsets.only(
-                      bottom: 1, // space between underline and text
-                    ),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                      color: Colors.white, // Text colour here
-                      width: 1, // Underline width
-                    ))),
-                    child: Text(
-                      'FORGOT PASSWORD',
-                      style: TextStyle(
-                        letterSpacing: 2,
-                        color: kWhiteColor,
-                      ),
-                    ),
-                  ),
+                  text: 'FORGOT PASSWORD',
                 ),
               ],
             ),
