@@ -15,7 +15,7 @@ class SignUpScreen extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: 50),
+                SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -40,7 +40,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 100),
+                SizedBox(height: 75),
                 BounceInLeft(
                   duration: kAnimationDuration,
                   child: MyTextField(
@@ -66,9 +66,7 @@ class SignUpScreen extends StatelessWidget {
                       hint: 'secret',
                       secret: true),
                 ),
-                SizedBox(
-                  height: 50,
-                ),
+                SizedBox(height: 75),
                 BounceInDown(
                   duration: kAnimationDuration,
                   child: BigButton(
@@ -115,4 +113,3 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
-

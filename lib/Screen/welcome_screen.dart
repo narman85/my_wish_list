@@ -39,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
                           duration: kAnimationDuration,
                           child: SmallButton(
                             onTap: () {
-                              Get.toNamed("/signupscreen");
+                              Get.offAllNamed("/signupscreen");
                             },
                             color: kWhiteColor,
                             text: "SIGN UP",
@@ -52,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
                           duration: kAnimationDuration,
                           child: SmallButton(
                             onTap: () {
-                              Get.toNamed("/signinscreen");
+                              Get.offAllNamed("/signinscreen");
                             },
                             color: kGreyColor,
                             text: "SIGN IN",

@@ -12,36 +12,51 @@ class AppRoutes {
   static final routes = [
     GetPage(
       name: '/',
-      page: () =>
-          WelcomeScreen(), //(uncomment here to swith to todo app)TodoList(),
+      page: () => WelcomeScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds: 0),
     ),
     GetPage(
       name: '/signinscreen',
       page: () => SignInScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds: 0),
     ),
     GetPage(
       name: '/signupscreen',
       page: () => SignUpScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds: 0),
     ),
     GetPage(
       name: '/forgotscreen',
       page: () => ForgotScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds:0),
     ),
     GetPage(
       name: '/homescreen',
       page: () => HomeScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds:0),
     ),
     GetPage(
       name: '/addwishscreen',
       page: () => AddWishScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds:0),
     ),
     GetPage(
       name: '/profilescreen',
       page: () => ProfileScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds:0),
     ),
     GetPage(
       name: '/settingsscreen',
       page: () => SettingsScreen(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds:0),
     )
   ];
 }

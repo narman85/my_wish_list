@@ -94,7 +94,6 @@ class MyTextField extends StatelessWidget {
         left: 50,
       ),
       child: TextField(
-        
         obscureText: secret,
         enableInteractiveSelection: false,
         cursorColor: kWhiteColor,
