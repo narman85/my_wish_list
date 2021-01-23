@@ -16,6 +16,7 @@ class ForgotScreen extends StatelessWidget {
                 SizedBox(height: 300),
                 BounceInDown(
                   duration: kAnimationDuration,
+                  //! set textfield
                   child: MyTextField(
                       prefiks: Icons.mail,
                       keyboard: TextInputType.emailAddress,
@@ -25,6 +26,7 @@ class ForgotScreen extends StatelessWidget {
                 SizedBox(height: 75),
                 BounceInUp(
                   duration: kAnimationDuration,
+                //! set verify button
                   child: BigButton(
                     onTap: () {},
                     text: 'VERIFY',

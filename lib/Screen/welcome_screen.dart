@@ -27,9 +27,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     )),
-                SizedBox(
-                  height: 100,
-                ),
+                SizedBox(height: 100),
                 Column(
                   children: [
                     Row(
@@ -45,9 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                             text: "SIGN UP",
                           ),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
+                        SizedBox(width: 20),
                         BounceInDown(
                           duration: kAnimationDuration,
                           child: SmallButton(
@@ -61,14 +57,13 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         BounceInUp(
                           duration: kAnimationDuration,
+                          //! set facebook
                           child: SmallIconButton(
                             onTap: () {
                               print("Facebook");
@@ -77,11 +72,10 @@ class WelcomeScreen extends StatelessWidget {
                             color: kWhiteColor,
                           ),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
+                        SizedBox(width: 20),
                         BounceInRight(
                           duration: kAnimationDuration,
+                          //! set google
                           child: SmallIconButton(
                             onTap: () {},
                             icon: FontAwesomeIcons.google,

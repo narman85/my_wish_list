@@ -43,6 +43,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 75),
                 BounceInLeft(
                   duration: kAnimationDuration,
+                  //! set textfield
                   child: MyTextField(
                       prefiks: Icons.mail,
                       keyboard: TextInputType.emailAddress,
@@ -52,6 +53,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 50),
                 BounceInRight(
                   duration: kAnimationDuration,
+                  //! set textfield name
                   child: MyTextField(
                       prefiks: FontAwesomeIcons.idCardAlt,
                       label: 'NAME',
@@ -60,6 +62,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 50),
                 BounceInLeft(
                   duration: kAnimationDuration,
+                  //! set textfield password
                   child: MyTextField(
                       prefiks: FontAwesomeIcons.key,
                       label: 'PASSWORD',
@@ -69,6 +72,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 75),
                 BounceInDown(
                   duration: kAnimationDuration,
+                  //! set sign up button
                   child: BigButton(
                     onTap: () {},
                     text: 'SIGN UP',
@@ -81,6 +85,7 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     BounceInLeft(
                       duration: kAnimationDuration,
+                      //! set fb button
                       child: SmallIconButton(
                         onTap: () {
                           print("Facebook");
@@ -89,11 +94,10 @@ class SignUpScreen extends StatelessWidget {
                         color: kWhiteColor,
                       ),
                     ),
-                    SizedBox(
-                      width: 50,
-                    ),
+                    SizedBox(width: 50),
                     BounceInRight(
                       duration: kAnimationDuration,
+                      //! set google button
                       child: SmallIconButton(
                         onTap: () {
                           print("Google");

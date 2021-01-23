@@ -44,6 +44,7 @@ class SignInScreen extends StatelessWidget {
                 SizedBox(height: 100),
                 BounceInLeft(
                   duration: kAnimationDuration,
+                  //! set textfield
                   child: MyTextField(
                       prefiks: Icons.mail,
                       keyboard: TextInputType.emailAddress,
@@ -53,6 +54,7 @@ class SignInScreen extends StatelessWidget {
                 SizedBox(height: 50),
                 BounceInRight(
                   duration: kAnimationDuration,
+                  //! set textfield
                   child: MyTextField(
                       prefiks: FontAwesomeIcons.key,
                       label: 'PASSWORD',
@@ -62,8 +64,11 @@ class SignInScreen extends StatelessWidget {
                 SizedBox(height: 75),
                 BounceInDown(
                   duration: kAnimationDuration,
+                  //! set sign in
                   child: BigButton(
-                    onTap: () {},
+                    onTap: () {
+                      print('signin');
+                    },
                     text: 'SIGN IN',
                     color: kWhiteColor,
                   ),
@@ -74,6 +79,7 @@ class SignInScreen extends StatelessWidget {
                   children: [
                     BounceInLeft(
                       duration: kAnimationDuration,
+                      //! set fb button
                       child: SmallIconButton(
                         onTap: () {
                           print("Facebook");
@@ -82,11 +88,10 @@ class SignInScreen extends StatelessWidget {
                         color: kWhiteColor,
                       ),
                     ),
-                    SizedBox(
-                      width: 50,
-                    ),
+                    SizedBox(width: 50),
                     BounceInRight(
                       duration: kAnimationDuration,
+                      //! set google button
                       child: SmallIconButton(
                         onTap: () {
                           Get.offNamed('homescreen');
@@ -98,9 +103,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 75,
-                ),
+                SizedBox(height: 75),
                 UnderlineButton(
                   onTap: () {
                     Get.toNamed('forgotscreen');

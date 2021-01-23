@@ -19,23 +19,21 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      "HEY MOSU\nwhat would you wish ?",
-                      style: TextStyle(
-                        letterSpacing: 2,
-                        fontSize: 20,
-                        color: kWhiteColor,
-                      ),
+                    //! set the text
+                    child: MyText(
+                      size: 20,
+                      text: 'HEY MOSU\nwhat would you wish ?',
                     ),
                   ),
                   SizedBox(width: 10),
                   Padding(
                     padding: const EdgeInsets.only(right: 12),
-                    child: GestureDetector(
-                      onTap: () {
+                    //! set avatar
+                    child: CircleAvatarWidget(
+                      radius: 50,
+                      tap: () {
                         Get.toNamed('profilescreen');
                       },
-                      child: CircleAvatar(maxRadius: 50),
                     ),
                   ),
                 ],
@@ -46,6 +44,7 @@ class HomeScreen extends StatelessWidget {
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 15, right: 100),
+                      //! set textfield 2
                       child: MyTextField2(
                         label: "MONEY",
                         keyboard: TextInputType.datetime,
@@ -57,19 +56,16 @@ class HomeScreen extends StatelessWidget {
                     width: 33,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 15),
-                    child: Text(
-                      "TOTAL - 25.000 \$",
-                      style: TextStyle(
-                        color: kWhiteColor,
-                        fontSize: 15,
-                        letterSpacing: 2,
-                      ),
-                    ),
-                  ),
+                      padding: const EdgeInsets.only(right: 15),
+                      //! set text
+                      child: MyText(
+                        text: 'TOTAL - 25.000 \$',
+                        size: 15,
+                      )),
                 ],
               ),
               SizedBox(height: 20),
+              //! take control on tabbar
               DefaultTabController(
                 length: 3,
                 child: Column(
@@ -78,44 +74,17 @@ class HomeScreen extends StatelessWidget {
                     TabBar(
                       indicatorColor: kWhiteColor,
                       tabs: [
-                        Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: FaIcon(
-                            FontAwesomeIcons.mapMarkerAlt,
-                            color: kWhiteColor,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: FaIcon(
-                            FontAwesomeIcons.borderAll,
-                            color: kWhiteColor,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: FaIcon(
-                            FontAwesomeIcons.heart,
-                            color: kWhiteColor,
-                          ),
-                        ),
+                        TabIcon(icon: FontAwesomeIcons.mapMarkerAlt),
+                        TabIcon(icon: FontAwesomeIcons.borderAll),
+                        TabIcon(icon: FontAwesomeIcons.heart),
                       ],
                     ),
                     Container(
                       height: Get.height,
                       child: TabBarView(children: [
-                        Padding(
-                          padding: const EdgeInsets.all(200),
-                          child: Card(
-                            color: kWhiteColor,
-                            child: Text(
-                              's',
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                        Center(child: Text('s')),
-                        Text('s'),
+                        Container(color: Colors.red),
+                        Container(color: Colors.green),
+                        Container(color: Colors.blue),
                       ]),
                     )
                   ],

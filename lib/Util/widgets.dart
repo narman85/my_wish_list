@@ -190,12 +190,15 @@ class BigButton extends StatelessWidget {
   }
 }
 
-
-//! Underline Button
+//! Underline Button Widget
 class UnderlineButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
-  const UnderlineButton({this.text, this.onTap});
+
+  const UnderlineButton({
+    this.text,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -218,6 +221,68 @@ class UnderlineButton extends StatelessWidget {
             color: kWhiteColor,
           ),
         ),
+      ),
+    );
+  }
+}
+
+//! Text Widget
+class MyText extends StatelessWidget {
+  final String text;
+  final double size;
+
+  const MyText({
+    this.text,
+    this.size,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        letterSpacing: 2,
+        fontSize: size,
+        color: kWhiteColor,
+      ),
+    );
+  }
+}
+
+//! Avatar
+class CircleAvatarWidget extends StatelessWidget {
+  final double radius;
+  final VoidCallback tap;
+
+  const CircleAvatarWidget({
+    this.radius,
+    this.tap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: tap,
+      child: CircleAvatar(maxRadius: radius),
+    );
+  }
+}
+
+//! Tab Icon Widget
+class TabIcon extends StatelessWidget {
+  final IconData icon;
+
+  const TabIcon({
+    this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Icon(
+        icon,
+        color: kWhiteColor,
       ),
     );
   }

@@ -7,6 +7,7 @@ import 'package:my_wish_list/Util/widgets.dart';
 class AddWishScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //! change design floatingbutton
     return FloatingActionButton(
       backgroundColor: kWhiteColor,
       child: FaIcon(
@@ -30,9 +31,10 @@ class AddWishScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      //! set wish image picker
                       InkWell(
                         onTap: () {
-                          print('s');
+                          print('image picker');
                         },
                         child: FaIcon(
                           FontAwesomeIcons.image,
@@ -41,14 +43,18 @@ class AddWishScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 20),
+                      //! set upload image
                       UnderlineButton(
                         text: 'UPLOAD IMAGE',
-                        onTap: () {},
+                        onTap: () {
+                          print('upload image');
+                        },
                       ),
                     ],
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 20, top: 20),
+                    //! set wishname textfield
                     child: MyTextField(
                       label: 'WISH NAME',
                       hint: 'tesla cybertruck',
@@ -57,6 +63,7 @@ class AddWishScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 30),
+                    //! set price textfield
                     child: MyTextField(
                       label: "WISH PRICE",
                       prefiks: FontAwesomeIcons.coins,
@@ -64,23 +71,13 @@ class AddWishScreen extends StatelessWidget {
                       hint: "70000",
                     ),
                   ),
-                  ButtonTheme(
-                    minWidth: 290,
-                    height: 60,
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Text(
-                        "SAVE",
-                        style: TextStyle(
-                          letterSpacing: 2,
-                          color: kBlackColor,
-                        ),
-                      ),
-                      color: kWhiteColor,
-                      onPressed: () {},
-                    ),
+                  //! set save button
+                  BigButton(
+                    color: kWhiteColor,
+                    text: 'SAVE',
+                    onTap: () {
+                      print('save');
+                    },
                   )
                 ],
               ),

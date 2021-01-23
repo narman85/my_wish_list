@@ -11,10 +11,9 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.all(10),
+            //! set exit button
             child: IconButton(
-                icon: FaIcon(
-                  FontAwesomeIcons.signOutAlt,
-                ),
+                icon: FaIcon(FontAwesomeIcons.signOutAlt),
                 onPressed: () {
                   print('exit');
                 }),
@@ -27,38 +26,36 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 85),
-                CircleAvatar(
+                //! pick image
+                CircleAvatarWidget(
                   radius: 85,
+                  tap: () {
+                    print('profile image picker');
+                  },
                 ),
                 SizedBox(height: 50),
+                //! upload image
                 UnderlineButton(
-                  onTap: () {},
+                  onTap: () {
+                    print('upload image');
+                  },
                   text: 'UPLOAD IMAGE',
                 ),
                 SizedBox(height: 50),
+                //! set textfield
                 MyTextField(
                   prefiks: FontAwesomeIcons.idCardAlt,
                   label: 'NAME',
                   hint: 'aladdin',
                 ),
                 SizedBox(height: 50),
-                ButtonTheme(
-                  minWidth: 290,
-                  height: 60,
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Text(
-                      "SAVE",
-                      style: TextStyle(
-                        letterSpacing: 2,
-                        color: kBlackColor,
-                      ),
-                    ),
-                    color: kWhiteColor,
-                    onPressed: () {},
-                  ),
+                //! save prosess
+                BigButton(
+                  onTap: () {
+                    print('save');
+                  },
+                  text: 'SAVE',
+                  color: kWhiteColor,
                 )
               ],
             ),
