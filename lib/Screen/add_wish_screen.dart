@@ -31,7 +31,7 @@ class AddWishScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      //! set wish image picker
+                      //! set wish image picker and change design
                       InkWell(
                         onTap: () {
                           print('image picker');
