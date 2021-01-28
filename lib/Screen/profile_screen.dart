@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends GetWidget<FirebaseController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +17,8 @@ class ProfileScreen extends StatelessWidget {
             child: IconButton(
                 icon: FaIcon(FontAwesomeIcons.signOutAlt),
                 onPressed: () {
+                  controller.googlesignOut();
+                  controller.signout();
                   print('exit');
                 }),
           )

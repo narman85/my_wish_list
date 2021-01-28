@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Screen/add_wish_screen.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetWidget<FirebaseController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +32,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 12),
                     //! set avatar
                     child: CircleAvatarWidget(
+                      image: NetworkImage(controller.imageurl),
                       radius: 50,
                       tap: () {
                         Get.toNamed('profilescreen');

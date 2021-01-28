@@ -1,11 +1,12 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import '../Util/constants.dart';
 import 'package:get/get.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends GetWidget<FirebaseController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +67,7 @@ class WelcomeScreen extends StatelessWidget {
                           //! set facebook
                           child: SmallIconButton(
                             onTap: () {
+                              controller.fbLogin();
                               print("Facebook");
                             },
                             icon: FontAwesomeIcons.facebookF,
@@ -77,7 +79,9 @@ class WelcomeScreen extends StatelessWidget {
                           duration: kAnimationDuration,
                           //! set google
                           child: SmallIconButton(
-                            onTap: () {},
+                            onTap: () {
+                              controller.googlesignIn();
+                            },
                             icon: FontAwesomeIcons.google,
                             color: kGreyColor,
                             kolor: kWhiteColor,

@@ -77,6 +77,7 @@ class MyTextField extends StatelessWidget {
   final String label;
   final String hint;
   bool secret;
+  final TextEditingController controller;
   @override
   MyTextField({
     this.prefiks,
@@ -84,6 +85,7 @@ class MyTextField extends StatelessWidget {
     this.label,
     this.hint,
     this.secret = false,
+    this.controller,
   });
 
   @override
@@ -94,6 +96,7 @@ class MyTextField extends StatelessWidget {
         left: 50,
       ),
       child: TextField(
+        controller: controller,
         obscureText: secret,
         enableInteractiveSelection: false,
         cursorColor: kWhiteColor,
@@ -253,17 +256,21 @@ class MyText extends StatelessWidget {
 class CircleAvatarWidget extends StatelessWidget {
   final double radius;
   final VoidCallback tap;
+  final NetworkImage image;
 
   const CircleAvatarWidget({
     this.radius,
-    this.tap,
+    this.tap, this.image,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: tap,
-      child: CircleAvatar(maxRadius: radius),
+      child: CircleAvatar(
+        maxRadius: radius,
+        backgroundImage: image,
+      ),
     );
   }
 }

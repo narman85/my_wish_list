@@ -2,10 +2,14 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends GetWidget<FirebaseController> {
+  final TextEditingController email = TextEditingController();
+  final TextEditingController pass = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +50,7 @@ class SignInScreen extends StatelessWidget {
                   duration: kAnimationDuration,
                   //! set textfield
                   child: MyTextField(
+                      controller: email,
                       prefiks: Icons.mail,
                       keyboard: TextInputType.emailAddress,
                       label: 'EMAIL',
@@ -56,6 +61,7 @@ class SignInScreen extends StatelessWidget {
                   duration: kAnimationDuration,
                   //! set textfield
                   child: MyTextField(
+                      controller: pass,
                       prefiks: FontAwesomeIcons.key,
                       label: 'PASSWORD',
                       hint: 'secret',
@@ -67,6 +73,7 @@ class SignInScreen extends StatelessWidget {
                   //! set sign in
                   child: BigButton(
                     onTap: () {
+                      _login();
                       print('signin');
                     },
                     text: 'SIGN IN',
@@ -82,6 +89,7 @@ class SignInScreen extends StatelessWidget {
                       //! set fb button
                       child: SmallIconButton(
                         onTap: () {
+                          controller.fbLogin();
                           print("Facebook");
                         },
                         icon: FontAwesomeIcons.facebookF,
@@ -94,7 +102,7 @@ class SignInScreen extends StatelessWidget {
                       //! set google button
                       child: SmallIconButton(
                         onTap: () {
-                          Get.offNamed('homescreen');
+                          controller.googlesignIn();
                         },
                         icon: FontAwesomeIcons.google,
                         color: kGreyColor,
@@ -116,5 +124,9 @@ class SignInScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _login() {
+    controller.login(email.text, pass.text);
   }
 }

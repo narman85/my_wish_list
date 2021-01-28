@@ -2,10 +2,14 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends GetWidget<FirebaseController> {
+  final TextEditingController firstn = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +49,7 @@ class SignUpScreen extends StatelessWidget {
                   duration: kAnimationDuration,
                   //! set textfield
                   child: MyTextField(
+                      controller: email,
                       prefiks: Icons.mail,
                       keyboard: TextInputType.emailAddress,
                       label: 'EMAIL',
@@ -55,6 +60,7 @@ class SignUpScreen extends StatelessWidget {
                   duration: kAnimationDuration,
                   //! set textfield name
                   child: MyTextField(
+                      controller: firstn,
                       prefiks: FontAwesomeIcons.idCardAlt,
                       label: 'NAME',
                       hint: 'aladdin'),
@@ -64,6 +70,7 @@ class SignUpScreen extends StatelessWidget {
                   duration: kAnimationDuration,
                   //! set textfield password
                   child: MyTextField(
+                      controller: password,
                       prefiks: FontAwesomeIcons.key,
                       label: 'PASSWORD',
                       hint: 'secret',
@@ -74,7 +81,9 @@ class SignUpScreen extends StatelessWidget {
                   duration: kAnimationDuration,
                   //! set sign up button
                   child: BigButton(
-                    onTap: () {},
+                    onTap: () {
+                      createUser();
+                    },
                     text: 'SIGN UP',
                     color: kWhiteColor,
                   ),
@@ -88,6 +97,7 @@ class SignUpScreen extends StatelessWidget {
                       //! set fb button
                       child: SmallIconButton(
                         onTap: () {
+                          controller.fbLogin();
                           print("Facebook");
                         },
                         icon: FontAwesomeIcons.facebookF,
@@ -100,6 +110,7 @@ class SignUpScreen extends StatelessWidget {
                       //! set google button
                       child: SmallIconButton(
                         onTap: () {
+                          controller.googlesignIn();
                           print("Google");
                         },
                         icon: FontAwesomeIcons.google,
@@ -115,5 +126,9 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void createUser() {
+    controller.createUser(firstn.text, email.text, password.text);
   }
 }

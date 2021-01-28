@@ -1,9 +1,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class ForgotScreen extends StatelessWidget {
+class ForgotScreen extends GetWidget<FirebaseController> {
+  final TextEditingController email = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +22,7 @@ class ForgotScreen extends StatelessWidget {
                   duration: kAnimationDuration,
                   //! set textfield
                   child: MyTextField(
+                      controller: email,
                       prefiks: Icons.mail,
                       keyboard: TextInputType.emailAddress,
                       label: 'EMAIL',
@@ -26,9 +31,11 @@ class ForgotScreen extends StatelessWidget {
                 SizedBox(height: 75),
                 BounceInUp(
                   duration: kAnimationDuration,
-                //! set verify button
+                  //! set verify button
                   child: BigButton(
-                    onTap: () {},
+                    onTap: () {
+                      controller.sendpasswordresetemail(email.text);
+                    },
                     text: 'VERIFY',
                     color: kWhiteColor,
                   ),
