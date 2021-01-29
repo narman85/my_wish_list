@@ -32,7 +32,7 @@ class HomeScreen extends GetWidget<FirebaseController> {
                     padding: const EdgeInsets.only(right: 12),
                     //! set avatar
                     child: CircleAvatarWidget(
-                      image: NetworkImage(controller.imageurl),
+                      // image: NetworkImage(controller.imageurl),
                       radius: 50,
                       tap: () {
                         Get.toNamed('profilescreen');

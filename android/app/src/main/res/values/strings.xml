@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">My Wish List</string>
+    <string name="facebook_app_id">733800307564430</string>
+    <string name="fb_login_protocol_scheme">fb733800307564430</string>
+</resources>

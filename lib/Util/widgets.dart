@@ -260,7 +260,8 @@ class CircleAvatarWidget extends StatelessWidget {
 
   const CircleAvatarWidget({
     this.radius,
-    this.tap, this.image,
+    this.tap,
+    this.image,
   });
 
   @override
