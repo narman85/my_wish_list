@@ -80,7 +80,7 @@ class WelcomeScreen extends GetWidget<AuthController> {
                           //! set google
                           child: SmallIconButton(
                             onTap: () {
-                              // controller.googlesignIn();
+                              controller.googlesignIn();
                             },
                             icon: FontAwesomeIcons.google,
                             color: kGreyColor,

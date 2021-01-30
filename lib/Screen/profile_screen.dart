@@ -17,8 +17,8 @@ class ProfileScreen extends GetWidget<AuthController> {
             child: IconButton(
                 icon: FaIcon(FontAwesomeIcons.signOutAlt),
                 onPressed: () {
-                  // controller.googlesignOut();
-                  // controller.signout();
+                  controller.googlesignOut();
+                  controller.signOut();
                   print('exit');
                 }),
           )

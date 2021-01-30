@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:my_wish_list/Controller/auth_controller.dart';
+import 'package:my_wish_list/Controller/wish_controller.dart';
+import 'package:my_wish_list/Model/wish_card.dart';
 import 'package:my_wish_list/Screen/add_wish_screen.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
@@ -32,7 +34,9 @@ class HomeScreen extends GetWidget<AuthController> {
                     padding: const EdgeInsets.only(right: 12),
                     //! set avatar
                     child: CircleAvatarWidget(
-                      // image: NetworkImage(controller.imageurl),
+                      image: NetworkImage(
+                        'https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/original.jpeg',
+                      ),
                       radius: 50,
                       tap: () {
                         Get.toNamed('profilescreen');
@@ -74,18 +78,41 @@ class HomeScreen extends GetWidget<AuthController> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    TabBar(
-                      indicatorColor: kWhiteColor,
-                      tabs: [
-                        TabIcon(icon: FontAwesomeIcons.mapMarkerAlt),
-                        TabIcon(icon: FontAwesomeIcons.borderAll),
-                        TabIcon(icon: FontAwesomeIcons.heart),
-                      ],
+                    SingleChildScrollView(
+                      child: TabBar(
+                        indicatorColor: kWhiteColor,
+                        tabs: [
+                          TabIcon(icon: FontAwesomeIcons.mapMarkerAlt),
+                          TabIcon(icon: FontAwesomeIcons.borderAll),
+                          TabIcon(icon: FontAwesomeIcons.heart),
+                        ],
+                      ),
                     ),
                     Container(
                       height: Get.height,
                       child: TabBarView(children: [
-                        Container(color: Colors.red),
+                        GetX<TodoController>(
+                          init: Get.put<TodoController>(TodoController()),
+                          builder: (TodoController todoController) {
+                            if (todoController != null &&
+                                todoController.todos != null) {
+                              return GridView.builder(
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3,
+                                ),
+                                itemCount: todoController.todos.length,
+                                itemBuilder: (_, index) {
+                                  return TodoCard(
+                                      uid: controller.user.uid,
+                                      todo: todoController.todos[index]);
+                                },
+                              );
+                            } else {
+                              return Text("loading...");
+                            }
+                          },
+                        ),
                         Container(color: Colors.green),
                         Container(color: Colors.blue),
                       ]),

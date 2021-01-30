@@ -102,7 +102,7 @@ class SignInScreen extends GetWidget<AuthController> {
                       //! set google button
                       child: SmallIconButton(
                         onTap: () {
-                          // controller.googlesignIn();
+                          controller.googlesignIn();
                         },
                         icon: FontAwesomeIcons.google,
                         color: kGreyColor,

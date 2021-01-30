@@ -82,8 +82,8 @@ class SignUpScreen extends GetWidget<AuthController> {
                   //! set sign up button
                   child: BigButton(
                     onTap: () {
-                      controller.createUser(firstn.text,
-                      email.text, password.text);
+                      controller.createUser(
+                          firstn.text, email.text, password.text);
                     },
                     text: 'SIGN UP',
                     color: kWhiteColor,
@@ -111,7 +111,7 @@ class SignUpScreen extends GetWidget<AuthController> {
                       //! set google button
                       child: SmallIconButton(
                         onTap: () {
-                          // controller.googlesignIn();
+                          controller.googlesignIn();
                           print("Google");
                         },
                         icon: FontAwesomeIcons.google,
@@ -128,6 +128,4 @@ class SignUpScreen extends GetWidget<AuthController> {
       ),
     );
   }
-
-  
 }

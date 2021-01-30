@@ -31,12 +31,13 @@ class Database {
     }
   }
 
-  Future<void> addTodo(String content, String uid) async {
+  Future<void> addTodo(String content, String uid, String price,) async {
     try {
       await _firestore.collection("users").doc(uid).collection("todos").add({
         'dateCreated': Timestamp.now(),
         'content': content,
         'done': false,
+        'price': price,
       });
     } catch (e) {
       print(e);

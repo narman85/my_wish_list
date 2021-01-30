@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:my_wish_list/Controller/auth_controller.dart';
+import 'package:my_wish_list/Controller/database.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class AddWishScreen extends StatelessWidget {
+class AddWishScreen extends GetWidget<AuthController> {
+  final TextEditingController _todoController = TextEditingController();
+  final TextEditingController _todoPrice = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     //! change design floatingbutton
@@ -56,6 +61,7 @@ class AddWishScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 20, top: 20),
                     //! set wishname textfield
                     child: MyTextField(
+                      controller: _todoController,
                       label: 'WISH NAME',
                       hint: 'tesla cybertruck',
                       prefiks: FontAwesomeIcons.gift,
@@ -65,6 +71,7 @@ class AddWishScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 30),
                     //! set price textfield
                     child: MyTextField(
+                      controller: _todoPrice,
                       label: "WISH PRICE",
                       prefiks: FontAwesomeIcons.coins,
                       keyboard: TextInputType.datetime,
@@ -76,7 +83,13 @@ class AddWishScreen extends StatelessWidget {
                     color: kWhiteColor,
                     text: 'SAVE',
                     onTap: () {
-                      print('save');
+                      if (_todoController.text != "") {
+                        Database().addTodo(_todoController.text,
+                            controller.user.uid, _todoPrice.text);
+                        _todoController.clear();
+                        _todoPrice.clear();
+                      }
+                      Get.back();
                     },
                   )
                 ],

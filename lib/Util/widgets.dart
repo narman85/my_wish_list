@@ -127,17 +127,20 @@ class MyTextField2 extends StatelessWidget {
   final String label;
   final String hint;
   bool secret;
+  final TextEditingController controller;
   @override
   MyTextField2({
     this.keyboard,
     this.label,
     this.hint,
     this.secret = false,
+    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       obscureText: secret,
       enableInteractiveSelection: false,
       cursorColor: kWhiteColor,
@@ -233,10 +236,11 @@ class UnderlineButton extends StatelessWidget {
 class MyText extends StatelessWidget {
   final String text;
   final double size;
+  
 
   const MyText({
     this.text,
-    this.size,
+    this.size, 
   });
 
   @override
