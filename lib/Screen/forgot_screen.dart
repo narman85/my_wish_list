@@ -5,7 +5,7 @@ import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class ForgotScreen extends GetWidget<FirebaseController> {
+class ForgotScreen extends GetWidget<AuthController> {
   final TextEditingController email = TextEditingController();
 
   @override
@@ -34,7 +34,7 @@ class ForgotScreen extends GetWidget<FirebaseController> {
                   //! set verify button
                   child: BigButton(
                     onTap: () {
-                      controller.sendpasswordresetemail(email.text);
+                      // controller.sendpasswordresetemail(email.text);
                     },
                     text: 'VERIFY',
                     color: kWhiteColor,

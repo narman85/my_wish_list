@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../Util/constants.dart';
 import 'package:get/get.dart';
 
-class WelcomeScreen extends GetWidget<FirebaseController> {
+class WelcomeScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +67,7 @@ class WelcomeScreen extends GetWidget<FirebaseController> {
                           //! set facebook
                           child: SmallIconButton(
                             onTap: () {
-                              controller.fbLogin();
+                              // controller.fbLogin();
                               print("Facebook");
                             },
                             icon: FontAwesomeIcons.facebookF,
@@ -80,7 +80,7 @@ class WelcomeScreen extends GetWidget<FirebaseController> {
                           //! set google
                           child: SmallIconButton(
                             onTap: () {
-                              controller.googlesignIn();
+                              // controller.googlesignIn();
                             },
                             icon: FontAwesomeIcons.google,
                             color: kGreyColor,

@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 
 import 'auth_controller.dart';
 
-class InstanceBinding extends Bindings {
+class AuthBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<FirebaseController>(() => FirebaseController());
+    Get.put<AuthController>(AuthController(), permanent: true);
   }
 }

@@ -34,7 +34,7 @@ class AppRoutes {
       transitionDuration: Duration(seconds: 0),
     ),
     GetPage(
-      name: '/homescreen',
+      name: '/home',
       page: () => HomeScreen(),
       transition: Transition.noTransition,
       transitionDuration: Duration(seconds: 0),

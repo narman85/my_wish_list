@@ -6,7 +6,7 @@ import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class SignInScreen extends GetWidget<FirebaseController> {
+class SignInScreen extends GetWidget<AuthController> {
   final TextEditingController email = TextEditingController();
   final TextEditingController pass = TextEditingController();
 
@@ -73,8 +73,8 @@ class SignInScreen extends GetWidget<FirebaseController> {
                   //! set sign in
                   child: BigButton(
                     onTap: () {
-                      _login();
-                      print('signin');
+                      controller.login(
+                      email.text, pass.text);
                     },
                     text: 'SIGN IN',
                     color: kWhiteColor,
@@ -89,7 +89,7 @@ class SignInScreen extends GetWidget<FirebaseController> {
                       //! set fb button
                       child: SmallIconButton(
                         onTap: () {
-                          controller.fbLogin();
+                          // controller.fbLogin();
                           print("Facebook");
                         },
                         icon: FontAwesomeIcons.facebookF,
@@ -102,7 +102,7 @@ class SignInScreen extends GetWidget<FirebaseController> {
                       //! set google button
                       child: SmallIconButton(
                         onTap: () {
-                          controller.googlesignIn();
+                          // controller.googlesignIn();
                         },
                         icon: FontAwesomeIcons.google,
                         color: kGreyColor,
@@ -126,7 +126,5 @@ class SignInScreen extends GetWidget<FirebaseController> {
     );
   }
 
-  void _login() {
-    controller.login(email.text, pass.text);
-  }
+  
 }

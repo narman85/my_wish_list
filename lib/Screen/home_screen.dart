@@ -6,7 +6,7 @@ import 'package:my_wish_list/Screen/add_wish_screen.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class HomeScreen extends GetWidget<FirebaseController> {
+class HomeScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

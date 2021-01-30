@@ -5,7 +5,7 @@ import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class ProfileScreen extends GetWidget<FirebaseController> {
+class ProfileScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,8 +17,8 @@ class ProfileScreen extends GetWidget<FirebaseController> {
             child: IconButton(
                 icon: FaIcon(FontAwesomeIcons.signOutAlt),
                 onPressed: () {
-                  controller.googlesignOut();
-                  controller.signout();
+                  // controller.googlesignOut();
+                  // controller.signout();
                   print('exit');
                 }),
           )

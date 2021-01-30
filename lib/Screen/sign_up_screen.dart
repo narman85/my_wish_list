@@ -6,7 +6,7 @@ import 'package:my_wish_list/Controller/auth_controller.dart';
 import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
-class SignUpScreen extends GetWidget<FirebaseController> {
+class SignUpScreen extends GetWidget<AuthController> {
   final TextEditingController firstn = TextEditingController();
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
@@ -82,7 +82,8 @@ class SignUpScreen extends GetWidget<FirebaseController> {
                   //! set sign up button
                   child: BigButton(
                     onTap: () {
-                      createUser();
+                      controller.createUser(firstn.text,
+                      email.text, password.text);
                     },
                     text: 'SIGN UP',
                     color: kWhiteColor,
@@ -97,7 +98,7 @@ class SignUpScreen extends GetWidget<FirebaseController> {
                       //! set fb button
                       child: SmallIconButton(
                         onTap: () {
-                          controller.fbLogin();
+                          // controller.fbLogin();
                           print("Facebook");
                         },
                         icon: FontAwesomeIcons.facebookF,
@@ -110,7 +111,7 @@ class SignUpScreen extends GetWidget<FirebaseController> {
                       //! set google button
                       child: SmallIconButton(
                         onTap: () {
-                          controller.googlesignIn();
+                          // controller.googlesignIn();
                           print("Google");
                         },
                         icon: FontAwesomeIcons.google,
@@ -128,7 +129,5 @@ class SignUpScreen extends GetWidget<FirebaseController> {
     );
   }
 
-  void createUser() {
-    controller.createUser(firstn.text, email.text, password.text);
-  }
+  
 }

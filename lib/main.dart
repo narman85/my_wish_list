@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:my_wish_list/Controller/is_signedin.dart';
+import 'package:my_wish_list/Controller/root.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,9 +24,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialBinding: InstanceBinding(),
+      initialBinding: AuthBinding(),
       theme: theme(),
-      home: IsSignedIn(),
+      home: Root(),
       debugShowCheckedModeBanner: false,
       builder: (context, widget) => ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, widget),
