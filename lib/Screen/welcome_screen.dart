@@ -67,8 +67,7 @@ class WelcomeScreen extends GetWidget<AuthController> {
                           //! set facebook
                           child: SmallIconButton(
                             onTap: () {
-                              // controller.fbLogin();
-                              print("Facebook");
+                              controller.fbLogin();
                             },
                             icon: FontAwesomeIcons.facebookF,
                             color: kWhiteColor,

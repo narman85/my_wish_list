@@ -73,8 +73,7 @@ class SignInScreen extends GetWidget<AuthController> {
                   //! set sign in
                   child: BigButton(
                     onTap: () {
-                      controller.login(
-                      email.text, pass.text);
+                      controller.login(email.text, pass.text);
                     },
                     text: 'SIGN IN',
                     color: kWhiteColor,
@@ -89,8 +88,7 @@ class SignInScreen extends GetWidget<AuthController> {
                       //! set fb button
                       child: SmallIconButton(
                         onTap: () {
-                          // controller.fbLogin();
-                          print("Facebook");
+                          controller.fbLogin();
                         },
                         icon: FontAwesomeIcons.facebookF,
                         color: kWhiteColor,
@@ -125,6 +123,4 @@ class SignInScreen extends GetWidget<AuthController> {
       ),
     );
   }
-
-  
 }

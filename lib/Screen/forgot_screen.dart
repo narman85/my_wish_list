@@ -34,7 +34,7 @@ class ForgotScreen extends GetWidget<AuthController> {
                   //! set verify button
                   child: BigButton(
                     onTap: () {
-                      // controller.sendpasswordresetemail(email.text);
+                      controller.sendpasswordresetemail(email.text);
                     },
                     text: 'VERIFY',
                     color: kWhiteColor,

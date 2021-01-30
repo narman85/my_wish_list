@@ -98,8 +98,7 @@ class SignUpScreen extends GetWidget<AuthController> {
                       //! set fb button
                       child: SmallIconButton(
                         onTap: () {
-                          // controller.fbLogin();
-                          print("Facebook");
+                          controller.fbLogin();
                         },
                         icon: FontAwesomeIcons.facebookF,
                         color: kWhiteColor,
@@ -112,7 +111,6 @@ class SignUpScreen extends GetWidget<AuthController> {
                       child: SmallIconButton(
                         onTap: () {
                           controller.googlesignIn();
-                          print("Google");
                         },
                         icon: FontAwesomeIcons.google,
                         color: kGreyColor,
