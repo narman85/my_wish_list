@@ -9,6 +9,9 @@ import 'package:my_wish_list/Util/constants.dart';
 import 'package:my_wish_list/Util/widgets.dart';
 
 class HomeScreen extends GetWidget<AuthController> {
+  final AuthController authController = Get.find<AuthController>();
+  final TextEditingController myMoney = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,13 +25,15 @@ class HomeScreen extends GetWidget<AuthController> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    //! set the text
-                    child: MyText(
-                      size: 20,
-                      text: 'HEY MOSU\nwhat would you wish ?',
-                    ),
-                  ),
+                      padding: const EdgeInsets.only(left: 15),
+                      //! set the text
+                      child: Obx(
+                        () => MyText(
+                          size: 20,
+                          text:
+                              '${authController.user.displayName}\nwhat would you wish ?',
+                        ),
+                      )),
                   SizedBox(width: 10),
                   Padding(
                     padding: const EdgeInsets.only(right: 12),
@@ -53,6 +58,7 @@ class HomeScreen extends GetWidget<AuthController> {
                       padding: const EdgeInsets.only(left: 15, right: 100),
                       //! set textfield 2
                       child: MyTextField2(
+                        controller: myMoney,
                         label: "MONEY",
                         keyboard: TextInputType.datetime,
                         hint: "your money",
@@ -63,12 +69,13 @@ class HomeScreen extends GetWidget<AuthController> {
                     width: 33,
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(right: 15),
-                      //! set text
-                      child: MyText(
-                        text: 'TOTAL - 25.000 \$',
-                        size: 15,
-                      )),
+                    padding: const EdgeInsets.only(right: 15),
+                    //! set text
+                    child: MyText(
+                      text: 'TOTAL - 5000 \$',
+                      size: 15,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 20),
